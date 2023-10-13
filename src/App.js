@@ -1,24 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import React, {useState} from 'react';
+
+
 
 function App() {
+  const [color, setColor] = useState('red');
+  const [car, setPop] = useState({
+    color: 'red',
+    brand: 'bmw',
+    model: 'x5'
+
+  })
+  const updateColor = () => {
+    setPop(previousDetail => {
+      return {...previousDetail,color:'blue'}
+    })
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <h1>My favorite color is {color}!</h1>
+    <h2>My Car color is {car.color}</h2>
+    <button type='button' onClick={() => setColor('blue')}>Blue</button>
+    <button type='button' onClick={() => setColor('red')}>Red</button>
+    <button type='button' onClick={() => setColor('green')}>Green</button>
+    <button type='button' onClick={updateColor}>Blue</button>
+    </>
   );
 }
 

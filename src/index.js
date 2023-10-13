@@ -3,12 +3,13 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 // import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Useffect from './Useeffect';
+// import Useffect from './Useeffect';
+import Component1 from './Usecontext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Useffect />
+    <Component1 />
   </React.StrictMode>
 );
 
